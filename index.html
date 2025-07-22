@@ -8,6 +8,13 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("3_s8VZKxgvKrRp93s"); // Replace with your public key
+  })();
+</script>
+
 </head>
 
 <body>
@@ -27,7 +34,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#projects">Process</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -65,9 +72,7 @@ At CodeNest, we simplify Web Design, Development, and Graphics — clear plans, 
             <span class="skill">SEO Optimization</span>
             <span class="skill">Node.js</span>
               <span class="skill">React js</span>
-            <!-- <span class="skill">Express</span> -->
-            <!-- <span class="skill">MongoDB</span> -->
-            <!-- <span class="skill">UI/UX Design</span> -->
+        
             <span class="skill">Responsive Design</span>
           
           </div>
@@ -237,7 +242,7 @@ At CodeNest, we simplify Web Design, Development, and Graphics — clear plans, 
             </div>
             <div class="contact-text">
               <h3>Email</h3>
-              <a href="mailto:debasish@example.com">mehshansohail766@gmail.com</a>
+              <a href="codenest313@gmail.com">codenest313@gmail.com</a>
             </div>
           </div>
 
@@ -263,29 +268,30 @@ At CodeNest, we simplify Web Design, Development, and Graphics — clear plans, 
         </div>
 
         <div class="contact-form">
-          <form>
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" class="form-control" required>
-            </div>
+         <form id="contact-form">
+  <div class="form-group">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" class="form-control" required>
+  </div>
 
-            <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" class="form-control" required>
-            </div>
+  <div class="form-group">
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" class="form-control" required>
+  </div>
 
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" class="form-control" required>
-            </div>
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" class="form-control" required>
+  </div>
 
-            <div class="form-group">
-              <label for="message">Your Message</label>
-              <textarea id="message" class="form-control" required></textarea>
-            </div>
+  <div class="form-group">
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" class="form-control" required></textarea>
+  </div>
 
-            <button type="submit" class="btn">Send Message</button>
-          </form>
+  <button type="submit" class="btn">Send Message</button>
+</form>
+
         </div>
       </div>
     </div>
@@ -317,10 +323,10 @@ At CodeNest, we simplify Web Design, Development, and Graphics — clear plans, 
     <div class="container">
       <div class="social-links">
         <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.linkedin.com/in/code-nest-7b4b85374/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+        <a href="https://www.instagram.com/the_codenest/" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61577989456105" class="social-link"><i class="fab fa-facebook"></i></a>
       </div>
       <p class="copyright">© 2025 Mehshan Sohail. All rights reserved.</p>
     </div>
@@ -347,6 +353,18 @@ At CodeNest, we simplify Web Design, Development, and Graphics — clear plans, 
       <img src="watsap.png" alt="WhatsApp">
     </a>
   </div>
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  emailjs.sendForm('service_6wmlpxm', 'template_s0yny1s', this)
+    .then(function() {
+      alert("Message sent successfully!");
+    }, function(error) {
+      alert("Failed to send message: " + JSON.stringify(error));
+    });
+});
+</script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
